@@ -28,6 +28,44 @@ class Main {
 		  }
 			  
     }
+
+		static int fib(int n){
+			int a = 0, b = 1, c, i;
+			if( n == 0)
+					return a;
+			for(i = 2; i <= n; i++){
+				c = a + b;
+				a = b;
+				b = c;
+			}
+			return b;
+	}
+
+		public static void printNumberSequence(int number){
+
+		int rounds = 0;
+		for(int i = 1;i<=number; i++){
+			System.out.print(i);
+
+			if(i%2==0){
+
+				for(int j=1; j<=fib(rounds+4); j++){
+					System.out.printf(",%d", (j*2)-1);
+				}
+				
+				rounds+=1;
+				//System.out.print("rounds: " + rounds);
+			}else{
+				for(int j=0; j<5;j++){
+					System.out.printf(",%d", (j+1) + ((int) Math.floor(i/2)*5));
+				}
+			}
+			
+
+			System.out.print("\n");
+			
+		}
+	}
 	
 
 	public static void main(String[] args) {
