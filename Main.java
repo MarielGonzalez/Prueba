@@ -112,10 +112,41 @@ class Main {
 				System.out.println("Generando numeros aleatorios...");
 
 
-					for(int i =1; i>3; i++){
+					for(int j =1; j>3; j++){
 						  int number=randomNumbers();
 							if (number <= 3 && number <=10){
            System.out.println("Generando Secuencia...");
+						int rounds = 0;
+	        	for(int i = 1;i<=number; i++){
+			      System.out.print(i);
+
+			      if(i%2==0){
+
+				   for(int p=1; p<=fib(rounds+4); p++){
+					 System.out.printf(",%d", (p*2)-1);
+				   }
+				
+				   rounds+=1;
+				
+			   }else{
+				  for(int p=0; p<5;p++){
+					System.out.printf(",%d", (p+1) + ((int) Math.floor(i/2)*5));
+				}
+			}
+			
+
+			System.out.print("\n");
+			
+		}
+
+
+
+
+
+
+
+
+
 
 				}  		
 
